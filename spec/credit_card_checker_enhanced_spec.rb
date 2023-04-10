@@ -34,9 +34,15 @@ describe "#credit_card_checker_enhanced" do
     expect(actual).to eq(expected)
   end
 
-  it "returns 'Invalid credit card number' when passed a number with an invalid luhn sum" do
+  it "returns 'Invalid credit card number' when passed a string with an invalid luhn sum" do
     actual = credit_card_checker_enhanced("4242424242424241")
-    expected = "Valid Mastercard credit card number"
+    expected = "Invalid credit card number"
     expect(actual).to eq(expected)
   end
+
+  # it "returns 'Invalid credit card number' when passed a string with an invalid luhn sum" do
+  #   actual = credit_card_checker_enhanced("555555555 5555 555555")
+  #   expected = "Invalid credit card number"
+  #   expect(actual).to eq(expected)
+  # end
 end
